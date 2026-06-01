@@ -165,3 +165,38 @@ print(hi.__next__())
 print(hi.__next__())
 print(hi.__next__())
 
+
+class Bank:
+    
+    def __init__(self,balance):
+        self.__balance = balance
+        
+    def deposit(self,amount):
+        self.__balance += amount
+        print('amount deposited',amount)
+        
+    def get_balance(self):
+        return self.__balance
+b1 = Bank(1000)
+
+b1.deposit(1000)
+print('current balance:',b1.get_balance())
+
+
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    
+    @abstractmethod
+    def sound(self):
+       pass
+       
+class Dog(Animal):
+
+    def sound(self):
+       print('dog barks ')
+       
+d1 = Dog()
+
+d1.sound()
